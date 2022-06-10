@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style type="text/tailwindcss">
+      @layer components {
+        .input-primary {
+          @apply mt-1 block px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm min-w-full;
+        }
+        .span-label {
+          @apply block mt-4 text-sm font-medium text-slate-700;
+        }
+        .my-radio {
+          @apply appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flex flex-col items-center my-5">
+      <h1 class="bg-sky-600">El formulaire del professor</h1>
+      <form action="" class="flex-col items-center min-w-[50%]">
+        <!--Fieldset contexte-->
+        <fieldset class="w-full mb-5">
+          <h1>Dates</h1>
+          <label class="block">
+            <span class="span-label">Date d'entrée</span>
+            <input type="date" class="input-primary"" />
+          </label>
+          <label class="block">
+            <span class="span-label">Date de sortie</span>
+            <input type="date" value="" class="input-primary" />
+          </label>
+          <label class="block">
+            <span class="span-label">Date du formulaire</span>
+            <input type="date" id="cus-js-date" value="" class="input-primary" />
+          </label>
+        </fieldset>
+        <!--Fieldset coordonées-->
+        <fieldset class="w-full mb-5">
+          <h1>Coordonées</h1>
+          <label for="" class="block">
+            <span class="span-label">Centre</span>
+            <input type="text" class="input-primary" placeholder="Floreffe" />
+          </label>
+
+          <label for="" class="block">
+            <span class="span-label">Nom du formateur</span>
+            <input type="text" class="input-primary" placeholder="Dupont" />
+          </label>
+
+          <label for="" class="block">
+            <span class="span-label">Prénom du formateur</span>
+            <input type="text" class="input-primary" placeholder="Patrick" />
+          </label>
+
+          <label for="" class="block">
+            <span class="span-label">Nom du stagiaire</span>
+            <input type="text" class="input-primary" placeholder="Dubois" />
+          </label>
+
+          <label for="" class="block">
+            <span class="span-label">Prénom du stagiaire</span>
+            <input type="text" class="input-primary" placeholder="Franck" />
+          </label>
+        </fieldset>
+        <!--Fieldset evaluation-->
+        <fieldset class="w-full">
+          <h1>Les questions pour des champions</h1>
+          <span class="span-label mb-2">Qui est votre formateur préféré ?</span>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q1rep1" value="" name="question1" />
+            <label for="q1rep1">Olivier Belery</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q1rep2" value="" name="question1" />
+            <label for="q1rep2" class="inline-block">Michelle Vos</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q1rep3" value="" name="question1" />
+            <label for="q1rep3" class="inline-block font-bold">Pierre Charlier</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q1rep4" value="" name="question1" />
+            <label for="q1rep4" class="inline-block">Gregory Fichere</label>
+          </div>
+
+          <span class="span-label mb-2">Deuxième question ?</span>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q2rep1" value="" name="question2" />
+            <label for="q2rep1">Réponse 1</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q2rep2" value="" name="question2" />
+            <label for="q2rep2" class="inline-block">Réponse 2</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q2rep3" value="" name="question2" />
+            <label for="q2rep3" class="inline-block font-bold">Réponse 3</label>
+          </div>
+          <div class="">
+            <input type="radio" class="my-radio" placeholder="Franck" id="q2rep4" value="" name="question2" />
+            <label for="q2rep4" class="inline-block">Réponse 4</label>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+    <script>
+      document.querySelector("#cus-js-date").value = new Date().toISOString().slice(0, 10);
+    </script>
+  </body>
+</html>
